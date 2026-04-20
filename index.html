@@ -3,53 +3,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yango - Live Chat</title>
+  <title>Taxi Yango | Live Support</title>
+  <meta
+    name="description"
+    content="Taxi Yango customer support and live assistance."
+  />
   <style>
-    body {
+    :root {
+      --brand-red: #ff1a1a;
+      --brand-dark: #0f172a;
+      --brand-text: #1f2937;
+      --brand-muted: #6b7280;
+      --brand-bg: #f4f6fb;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --line: rgba(15, 23, 42, 0.08);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #111827;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 26, 26, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.08), transparent 30%),
+        var(--brand-bg);
+      color: var(--brand-text);
     }
 
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      background: #ffffff;
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .left-panel {
       padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
-    h1 {
-      margin-top: 0;
-      font-size: 32px;
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
     }
 
-    p {
-      font-size: 18px;
+    .logo-box {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      background: var(--brand-red);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: 1px;
+      box-shadow: 0 14px 30px rgba(255, 26, 26, 0.28);
+      flex-shrink: 0;
+    }
+
+    .brand-copy small {
+      display: block;
+      color: var(--brand-muted);
+      font-size: 13px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.05;
+      color: var(--brand-dark);
+    }
+
+    .headline {
+      font-size: 20px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
+    .subtext {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--brand-muted);
+      margin: 0 0 28px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .feature {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--brand-dark);
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .feature span {
+      color: var(--brand-muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .status-bar {
+      margin-top: 28px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(37, 99, 235, 0.08);
+      border-left: 5px solid #2563eb;
+      color: #1e3a8a;
+      font-size: 15px;
       line-height: 1.6;
     }
 
-    .note {
-      margin-top: 20px;
-      padding: 16px;
-      background: #eaf2ff;
-      border-left: 4px solid #2563eb;
-      border-radius: 8px;
+    .right-panel {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .support-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      padding: 26px;
+    }
+
+    .support-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 26, 26, 0.08);
+      color: var(--brand-red);
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .support-title {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      color: var(--brand-dark);
+    }
+
+    .support-text {
+      margin: 0 0 22px;
+      color: var(--brand-muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .mock-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mock-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mock-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--brand-dark);
+      font-size: 14px;
+    }
+
+    .mock-item span {
+      color: var(--brand-muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--brand-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .left-panel,
+      .right-panel {
+        padding: 28px;
+      }
+
+      .brand-copy h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 18px, 1000px);
+        margin: 16px auto;
+        padding: 10px;
+      }
+
+      .left-panel,
+      .right-panel {
+        padding: 22px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .logo-box {
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .headline {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Yango - Live Chat</h1>
-    <p>Welcome to the Yeastar widget test page.</p>
-    <p>If the integration is correct, the chat button or widget should appear on this page.</p>
+  <main class="page">
+    <section class="hero">
+      <div class="card left-panel">
+        <div class="topbar">
+          <div class="logo-box">Y</div>
+          <div class="brand-copy">
+            <small>Customer Support</small>
+            <h1>TAXI YANGO</h1>
+          </div>
+        </div>
 
-    <div class="note">
-      Test domain published on Render for Live Chat channel integration.
-    </div>
-  </div>
+        <p class="headline">
+          Welcome to the official Taxi Yango live support page.
+        </p>
+
+        <p class="subtext">
+          Our live chat widget is available for assistance, service inquiries,
+          support requests, and customer communication in real time.
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <strong>Fast Assistance</strong>
+            <span>Get connected with support quickly through the live chat widget.</span>
+          </div>
+          <div class="feature">
+            <strong>Reliable Service</strong>
+            <span>Professional communication experience for riders and customers.</span>
+          </div>
+          <div class="feature">
+            <strong>Live Communication</strong>
+            <span>Send messages instantly and receive support directly from the team.</span>
+          </div>
+        </div>
+
+        <div class="status-bar">
+          The live support widget should appear in the bottom-right corner of this page.
+        </div>
+      </div>
+
+      <div class="card right-panel">
+        <div class="support-card">
+          <div class="support-badge">● Live Support Active</div>
+          <h2 class="support-title">Need help with Taxi Yango?</h2>
+          <p class="support-text">
+            Use the live chat to contact our team for booking support, customer service,
+            and general assistance.
+          </p>
+
+          <div class="mock-list">
+            <div class="mock-item">
+              <strong>Customer Assistance</strong>
+              <span>Questions about the service, support, and communication.</span>
+            </div>
+            <div class="mock-item">
+              <strong>Real-Time Response</strong>
+              <span>Our live channel allows immediate contact with the support team.</span>
+            </div>
+            <div class="mock-item">
+              <strong>Professional Experience</strong>
+              <span>A clean and branded page for your official support entry point.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          Taxi Yango live support portal
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="https://nuxwaytechnology.use.ycmcloud.com/live_chat.v1.0.0.js?channelNumber=LC00007"></script>
 </body>
