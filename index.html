@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yango Taxi CBBA | Live Support</title>
+  <title>YANGO TAXI CBBA | Soporte</title>
 
   <style>
     body {
@@ -61,12 +61,18 @@
 
     .call-button {
       display: inline-block;
-      padding: 12px 20px;
+      padding: 14px 22px;
       background: #ff1a1a;
       color: white;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 8px 20px rgba(255,0,0,0.25);
+    }
+
+    .call-button:hover {
+      opacity: 0.9;
     }
 
     .note {
@@ -89,7 +95,7 @@
 
   <div class="container">
 
-    <!-- LEFT -->
+    <!-- IZQUIERDA -->
     <div class="card">
       <div class="logo">
         <img src="logo-yango.png" alt="Yango Logo">
@@ -102,56 +108,34 @@
       </div>
 
       <p>
-        Official support page for Yango Taxi Cochabamba.
-        Use live chat or call directly.
+        Página oficial de soporte de Yango Taxi Cochabamba.
+        Usa el chat en vivo o realiza una llamada directa.
       </p>
 
-      <div class="call-box" id="callContainer"></div>
+      <div class="call-box">
+        <a
+          class="call-button"
+          href="https://nuxwaytechnology.use.ycmcloud.com/webtrunk/calllink?code=djV2ckhOVEE2RFU0Wmxyc1RwQ0YxMGxSODBSOWk3cTY="
+          target="_blank"
+        >
+          📞 Llamar ahora
+        </a>
+      </div>
 
       <div class="note">
-        Live chat should appear in the bottom-right corner.
+        El chat en vivo aparecerá en la esquina inferior derecha.
       </div>
     </div>
 
-    <!-- RIGHT -->
+    <!-- DERECHA -->
     <div class="card">
-      <h2>Need help?</h2>
+      <h2>¿Necesitas ayuda?</h2>
       <p>
-        Contact our support team for booking, service, or assistance.
+        Contacta con nuestro equipo para reservas, soporte o asistencia.
       </p>
     </div>
 
   </div>
-
-  <!-- SCRIPT PARA BOTÓN DE LLAMADA -->
-  <script>
-    /*
-      1. Intenta leer variable de Render (si existe en window)
-      2. Si no existe, usa fallback manual
-    */
-
-    const fallbackCallUrl = ""; // 👈 aquí puedes pegar manual si quieres
-
-    function getRenderVariable(name) {
-      if (window && window[name]) return window[name];
-      return null;
-    }
-
-    const callUrl =
-      getRenderVariable("YEASTAR_WEBRTC_CALL_URL") ||
-      fallbackCallUrl;
-
-    const container = document.getElementById("callContainer");
-
-    if (callUrl) {
-      const btn = document.createElement("a");
-      btn.href = callUrl;
-      btn.target = "_blank";
-      btn.className = "call-button";
-      btn.innerText = "📞 Call Now (WebRTC)";
-      container.appendChild(btn);
-    }
-  </script>
 
   <!-- YEASTAR CHAT (NO TOCAR) -->
   <script src="https://nuxwaytechnology.use.ycmcloud.com/live_chat.v1.0.0.js?channelNumber=LC00007"></script>
