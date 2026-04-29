@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YANGO TAXI CBBA | Soporte</title>
+  <title>SIKAFFI & ABOGADOS | Atención al Cliente</title>
 
   <style>
     body {
@@ -30,51 +30,61 @@
     }
 
     .logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 20px;
-      overflow: hidden;
+      width: 200px;
       margin-bottom: 20px;
     }
 
     .logo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
     }
 
     h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 34px;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: #6b7280;
+      font-weight: bold;
     }
 
     .phone {
-      margin-top: 10px;
-      font-weight: bold;
+      margin-top: 15px;
       font-size: 18px;
-      color: #ff1a1a;
+      font-weight: bold;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f9fafb;
+      border-left: 4px solid #111827;
+      border-radius: 10px;
+      line-height: 1.6;
     }
 
     .call-box {
       margin-top: 20px;
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    .call-button {
-      display: inline-block;
+    .btn {
       padding: 14px 22px;
-      background: #ff1a1a;
-      color: white;
       border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 8px 20px rgba(255,0,0,0.25);
+      color: white;
     }
 
-    .call-button:hover {
+    .btn-blue { background: #2563eb; }
+    .btn-dark { background: #111827; }
+    .btn-green { background: #22c55e; }
+
+    .btn:hover {
       opacity: 0.9;
     }
 
@@ -86,52 +96,30 @@
       border-radius: 8px;
     }
 
+    /* BOTÓN WHATSAPP */
     .whatsapp-widget {
       position: fixed;
       left: 20px;
       bottom: 20px;
-      width: 68px;
-      height: 68px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       background: white;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .whatsapp-widget:hover {
-      transform: scale(1.08);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.22);
     }
 
     .whatsapp-widget img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      display: block;
+      width: 40px;
+      height: 40px;
     }
 
     @media(max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width: 600px) {
-      .whatsapp-widget {
-        left: 14px;
-        bottom: 14px;
-        width: 60px;
-        height: 60px;
-      }
-
-      .whatsapp-widget img {
-        width: 38px;
-        height: 38px;
       }
     }
   </style>
@@ -143,63 +131,72 @@
 
     <!-- IZQUIERDA -->
     <div class="card">
+
       <div class="logo">
-        <img src="logo-yango.png" alt="Yango Logo">
+        <img src="logo-sikaffi.jpg" alt="SIKAFFI & ABOGADOS">
       </div>
 
-      <h1>YANGO TAXI CBBA</h1>
+      <h1>SIKAFFI & ABOGADOS</h1>
+      <div class="subtitle">Atención al Cliente</div>
 
       <div class="phone">
-        📞 62744330
+        📞 64850554
       </div>
 
-      <p>
-        Página oficial de soporte de Yango Taxi Cochabamba.
-        Usa el chat en vivo, realiza una llamada directa o contáctanos por WhatsApp.
-      </p>
+      <div class="notice">
+        <strong>Estimado Cliente:</strong><br><br>
+        SIKAFFI & ABOGADOS le recuerda que realizando el pago de su línea con su Código de Cliente,
+        quedará sin obligaciones financieras y se solicitará la eliminación de sus datos en la Central de Riesgos.
+        <br><br>
+        También puede solicitar la reactivación del servicio y continuar disfrutando de su plan.
+      </div>
 
       <div class="call-box">
-        <a
-          class="call-button"
+
+        <a class="btn btn-blue"
+          href="https://pagos.viva.com.bo/#/MenuPago"
+          target="_blank">
+          💳 Pagar aquí
+        </a>
+
+        <a class="btn btn-dark"
           href="https://nuxwaytechnology.use.ycmcloud.com/webtrunk/calllink?code=djV2ckhOVEE2RFU0Wmxyc1RwQ0YxMGxSODBSOWk3cTY="
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          target="_blank">
           📞 Llamar ahora
         </a>
+
+        <a class="btn btn-green"
+          href="https://api.whatsapp.com/send?phone=59164850554"
+          target="_blank">
+          WhatsApp
+        </a>
+
       </div>
 
       <div class="note">
-        El chat en vivo aparecerá en la esquina inferior derecha y el acceso a WhatsApp en la esquina inferior izquierda.
+        También puede solicitar un QR de pago mediante WhatsApp o chat en vivo.
       </div>
+
     </div>
 
     <!-- DERECHA -->
     <div class="card">
-      <h2>¿Necesitas ayuda?</h2>
+      <h2>¿Necesita ayuda?</h2>
       <p>
-        Contacta con nuestro equipo para reservas, soporte o asistencia.
-      </p>
-      <p>
-        También puedes escribirnos directamente por WhatsApp usando el botón verde de la esquina inferior izquierda.
+        Puede contactarnos para consultas, pagos, o solicitar su QR.
       </p>
     </div>
 
   </div>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <a
-    class="whatsapp-widget"
-    href="https://api.whatsapp.com/send?phone=59164850554"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar por WhatsApp"
-    title="Contactar por WhatsApp"
-  >
+  <!-- BOTÓN WHATSAPP -->
+  <a class="whatsapp-widget"
+     href="https://api.whatsapp.com/send?phone=59164850554"
+     target="_blank">
     <img src="wpp.png" alt="WhatsApp">
   </a>
 
-  <!-- YEASTAR CHAT (NO TOCAR) -->
+  <!-- CHAT YEASTAR -->
   <script src="https://nuxwaytechnology.use.ycmcloud.com/live_chat.v1.0.0.js?channelNumber=LC00007"></script>
 
 </body>
